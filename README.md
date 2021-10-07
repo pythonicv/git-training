@@ -1,2 +1,2 @@
 # git-training data
-Cómo no cagarla en git?
+dsddsddddómo no cagarla en git?
