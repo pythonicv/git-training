@@ -1,2 +1,2 @@
 # git-training
-Cómo no cagarla en git?
+iffffCómo no cagarla en git?
