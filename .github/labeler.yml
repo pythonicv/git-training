@@ -1,2 +1,6 @@
 label1:
 - README.md
+
+
+directory:
+- basic/diff/*
