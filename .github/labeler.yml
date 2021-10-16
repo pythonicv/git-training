@@ -4,3 +4,7 @@ label1:
 
 directory:
 - basic/diff/*
+
+
+directory2:
+- basic/diff/*
