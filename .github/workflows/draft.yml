@@ -6,15 +6,7 @@ on:
       - main
 
 jobs:
-  update_release_draft:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: release-drafter/release-drafter@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
   release:
-    if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
     steps:
       - name: Build Changelog
@@ -22,3 +14,11 @@ jobs:
         uses: mikepenz/release-changelog-builder-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  update_release_draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: release-drafter/release-drafter@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
