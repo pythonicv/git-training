@@ -9,14 +9,12 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: Build Changelog
-        uses: srepollock/changelog-generator-action@master
+      - name: "✏️ Generate release changelog"
+        uses: heinrichreimer/github-changelog-generator-action@v2.3
         with:
-          REPO_NAME: 'srepollock/changelog-generator-action'
-          ACCESS_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          PATH: '/CHANGELOG.md'
-          COMMIT_MESSAGE: 'docs(CHANGELOG): update release notes'
-
+          token: ${{ secrets.GITHUB_TOKEN }} 
+          
+          
   update_release_draft:
     runs-on: ubuntu-latest
     steps:
