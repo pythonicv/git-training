@@ -22,8 +22,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-
-    steps:
       - uses: actions/checkout@master
       - name: Master main -> develop
         uses: devmasx/merge-branch@master
