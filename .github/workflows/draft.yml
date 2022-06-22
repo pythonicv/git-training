@@ -22,15 +22,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - uses: actions/checkout@v2
-    - name: Set Git config
-      run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "Github Actions"
-    - name: Merge master back to dev
-      run: |
-          git fetch --unshallow
-          git checkout dev
-          git pull
-          git merge --no-ff master -m "Merge branch 'main' into develop"
-          git push
+      - uses: actions/checkout@v2
+      - name: Set Git config
+        run: |
+            git config --local user.email "actions@github.com"
+            git config --local user.name "Github Actions"
+      - name: Merge master back to dev
+        run: |
+            git fetch --unshallow
+            git checkout dev
+            git pull
+            git merge --no-ff master -m "Merge branch 'main' into develop"
+            git push
