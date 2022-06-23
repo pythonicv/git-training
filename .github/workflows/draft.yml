@@ -4,8 +4,10 @@ on:
   push:
     branches:
       - main
+    types: [closed]
 
 jobs:
+  if: github.event.pull_request.merged == true
   release:
     runs-on: ubuntu-latest
     steps:
@@ -14,19 +16,23 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }} 
           
-          
   update_release_draft:
+    timeout-minutes: 2        
     runs-on: ubuntu-latest
     steps:
       - uses: release-drafter/release-drafter@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: actions/checkout@master
-      - name: Master main -> develop
-        uses: devmasx/merge-branch@master
-        with:
-          type: now
-          from_branch: main
-          target_branch: develop
-          github_token: ${{ github.token }}
+      - uses: actions/checkout@v2
+      - name: Set Git config
+        run: |
+            git config --local user.email "actions@github.com"
+            git config --local user.name "Github Actions"
+      - name: Merge master back to dev
+        run: |
+            git fetch --unshallow
+            git checkout develop
+            git pull
+            git merge --no-ff master
+            git push
