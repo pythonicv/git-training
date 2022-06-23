@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-    types: [closed]
 
 jobs:
   release:
@@ -33,5 +32,5 @@ jobs:
           git fetch --unshallow
           git checkout develop
           git pull
-          git merge --no-ff master
+          git merge --no-ff main
           git push
