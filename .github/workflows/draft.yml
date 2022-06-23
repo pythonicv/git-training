@@ -35,15 +35,4 @@ jobs:
           git merge --no-ff main
           git push
 
-      - name: Update Changelog
-        uses: stefanzweifel/changelog-updater-action@v1
-        with:
-          release-notes: ${{ github.event.release.body }}
-          latest-version: ${{ github.event.release.name }}
 
-      - name: Commit updated CHANGELOG
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          branch: main
-          commit_message: Update CHANGELOG
-          file_pattern: CHANGELOG.md
