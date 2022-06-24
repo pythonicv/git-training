@@ -55,25 +55,17 @@ autolabeler:
       - '*.md'
     branch:
       - '/docs{0,1}\/.+/'
-  - label: 
-      - 'fix'
-      - 'bugfix'
-      - 'bug'   
+  - label: 'bug'   
     branch:
       - '/bugfix\/.+/'
     title:
       - '/bugfix/i'      
-  - label: 
-      - 'fix'
-      - 'bugfix'
-      - 'bug'   
+  - label: 'bug'   
     branch:
       - '/fix\/.+/'
     title:
       - '/fix/i'
-  - label: 
-      - 'feature'
-      - 'enhancement'
+  - label: 'feature'
     branch:
       - '/feature\/.+/'
   - label: 'hotfix'
