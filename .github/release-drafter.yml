@@ -10,17 +10,26 @@ template: |
 categories:
   - title: 'Breaking'
     label: 'breaking'
-  - title: 'New'
-    label: 'feature'
-  - title: 'Bug Fixes'
-    label: 'bug'
+  - title: 'Added'
+    label: 
+      - 'feature'
+      - 'enhancement'
+  - title: 'Fixed'
+    label:
+      - 'hotfix'    
+      - 'fix'
+      - 'bugfix'
+      - 'bug'
+  - title: 'Changed'
+    label: 'refactor'    
   - title: 'Maintenance'
-    label: 'maintenance'
+    label:
+      - 'maintenance'
+      - 'chore'    
   - title: 'Documentation'
     label: 'docs'
-  - title: 'changes'
   - title: 'Dependency Updates'
-    label: 'tdependencies'
+    label: 'dependencies'
     collapse-after: 5
 
 version-resolver:
@@ -46,14 +55,39 @@ autolabeler:
       - '*.md'
     branch:
       - '/docs{0,1}\/.+/'
-  - label: 'bug'
+  - label: 
+      - 'fix'
+      - 'bugfix'
+      - 'bug'   
+    branch:
+      - '/bugfix\/.+/'
+    title:
+      - '/bugfix/i'      
+  - label: 
+      - 'fix'
+      - 'bugfix'
+      - 'bug'   
     branch:
       - '/fix\/.+/'
     title:
       - '/fix/i'
-  - label: 'enhancement'
+  - label: 
+      - 'feature'
+      - 'enhancement'
     branch:
       - '/feature\/.+/'
+  - label: 'hotfix'
+    branch:
+      - '/hotfix\/.+/'      
+  - label: 'refactor'
+    branch:
+      - '/refactor\/.+/'      
+  - label: 'chore'
+    branch:
+      - '/chore\/.+/'      
+  - label: 'docs'
+    branch:
+      - '/docs\/.+/'            
     body:
       - '/JIRA-[0-9]{1,4}/'      
 
