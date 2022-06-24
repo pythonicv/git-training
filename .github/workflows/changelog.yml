@@ -8,16 +8,6 @@ jobs:
   update:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Update Changelog
-        uses: stefanzweifel/changelog-updater-action@v1
-        with:
-          latest-version: ${{ github.event.release.tag_name }}
-          release-notes: ${{ github.event.release.body }}
-
-      - name: Commit updated CHANGELOG
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          branch: ${{ github.event.release.target_commitish }}
-          commit_message: Update CHANGELOG
-          file_pattern: CHANGELOG.md
+  uses: Helmisek/conventional-changelog-generator@v1.0.6-release
+    with:
+      token: ${{ secrets.GITHUB_TOKEN }}
