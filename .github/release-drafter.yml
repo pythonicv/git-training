@@ -1,5 +1,45 @@
-name-template: 'v$RESOLVED_VERSION 🌈'
-tag-template: 'v$RESOLVED_VERSION'}
+name-template: 'v$RESOLVED_VERSION'
+tag-template: 'v$RESOLVED_VERSION'
+template: |
+  # What's Changed
+
+  $CHANGES
+
+  **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
+
+categories:
+  - title: 'Breaking'
+    label: 'breaking'
+  - title: 'New'
+    label: 'feature'
+  - title: 'Bug Fixes'
+    label: 'bug'
+  - title: 'Maintenance'
+    label: 'maintenance'
+  - title: 'Documentation'
+    label: 'docs'
+  - title: 'changes'
+  - title: 'Dependency Updates'
+    label: 'tdependencies'
+    collapse-after: 5
+
+version-resolver:
+  major:
+    labels:
+      - 'major'
+  minor:
+    labels:
+      - 'minor'
+  patch:
+    labels:
+      - 'patch'
+      - 'bug'
+      - 'maintenance'
+      - 'docs'
+      - 'dependencies'
+      - 'security'
+      
+      
 autolabeler:
   - label: 'chore'
     files:
@@ -15,33 +55,7 @@ autolabeler:
     branch:
       - '/feature\/.+/'
     body:
-      - '/JIRA-[0-9]{1,4}/'
-categories:
-  - title: '🚀 Features'
-    labels:
-      - 'feature'
-      - 'enhancement'
-  - title: '🐛 Bug Fixes'
-    labels:
-      - 'fix'
-      - 'bugfix'
-      - 'bug'
-  - title: '🧰 Maintenance'
-    label: 'chore'
-change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
-change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
-version-resolver:
-  major:
-    labels:
-      - 'major'
-  minor:
-    labels:
-      - 'minor'
-  patch:
-    labels:
-      - 'patch'
-  default: patch
-template: |
-  ## Changes
+      - '/JIRA-[0-9]{1,4}/'      
 
-  $CHANGES
+exclude-labels:
+  - 'skip-changelog'
