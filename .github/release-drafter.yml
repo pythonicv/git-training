@@ -85,7 +85,6 @@ autolabeler:
 
 references:
   - master
-  - v.+
 
 exclude-labels:
   - 'skip-changelog'
