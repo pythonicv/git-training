@@ -84,8 +84,7 @@ autolabeler:
       - '/JIRA-[0-9]{1,4}/'      
 
 references:
-  - master
-  - v.+
+  - main
 
 exclude-labels:
   - 'skip-changelog'
