@@ -10,11 +10,9 @@ deasdasdsa
 
 dede
 
+dsad
+
 ∂∂
-
-
-
-
 
 sdds
 dsadasmmmm
