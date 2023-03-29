@@ -10,14 +10,12 @@ deasdasdsa
 
 dede
 
+dsad
+
 ∂∂
 
 
 
 
-
-sdds
-dsadasmmmm
-}}}
 
 +ds
