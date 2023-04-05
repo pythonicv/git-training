@@ -1,0 +1,44 @@
+.bg-icon_chat {
+    width: 25px; height: 25px;
+    background: url('css_sprites.png') -201px -105px;
+}
+
+.bg-logo_mastercard {
+    width: 49px; height: 25px;
+    background: url('css_sprites.png') -10px -159px;
+}
+
+.bg-logo_adyen {
+    width: 65px; height: 25px;
+    background: url('css_sprites.png') -116px -105px;
+}
+
+.bg-logo_security {
+    width: 86px; height: 34px;
+    background: url('css_sprites.png') -150px -10px;
+}
+
+.bg-sticker_discount_fr {
+    width: 120px; height: 27px;
+    background: url('css_sprites.png') -10px -58px;
+}
+
+.bg-logo_visa {
+    width: 45px; height: 25px;
+    background: url('css_sprites.png') -79px -159px;
+}
+
+.bg-sticker_discount_en {
+    width: 120px; height: 28px;
+    background: url('css_sprites.png') -10px -10px;
+}
+
+.bg-logo_security_dblue {
+    width: 86px; height: 34px;
+    background: url('css_sprites.png') -10px -105px;
+}
+
+.bg-empty_cart {
+    width: 200px; height: 200px;
+    background: url('css_sprites.png') 0px -200px;
+}
